@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+service Practice {
+  // Simple RPC
+  rpc GetFeature(Point) returns (Feature) {}
+
+  // Server Side Streaming RPC
+  rpc ListFeatures(Rectangle) returns (stream Feature) {}
+
+  // Client Side Streaming RPC
+  rpc RecordRoute(stream Point) returns (RouteSummary) {}
+
+  // Bidirectional Streaming RPC
+  rpc RouteChat(stream RouteNote) returns (stream RouteNote) {}
+}
