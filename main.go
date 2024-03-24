@@ -12,9 +12,9 @@ type myGreeterServer struct {
 	Greeting.UnimplementedGreeterServer
 }
 
-func (s myGreeterServer) Create(ctx context.Context, server *Greeting.HelloRequest) (*Greeting.HelloReply, error) {
+func (s myGreeterServer) SayHello(ctx context.Context, server *Greeting.HelloRequest) (*Greeting.HelloReply, error) {
 	return &Greeting.HelloReply{
-		Message: "Hello my name is Shashwat",
+		Message: "Hello my name is " + server.GetName(),
 	}, nil
 }
 
